@@ -1,6 +1,6 @@
-# PBSync
+# pocketbook-sync
 
-A CLI utility for syncing book positions between [PocketBook 740](https://pocketbook.ru/shop/ustroystva/pocketbook-740-chernyy/) e-reader and [zathura](https://pwmt.org/projects/zathura/) document viewer.
+A CLI utility for synchronize the positions in the books between [PocketBook 740](https://pocketbook.ru/shop/ustroystva/pocketbook-740-chernyy/) E-reader and [zathura](https://pwmt.org/projects/zathura/) document viewer.
 
 ## Building from source
 
@@ -28,7 +28,11 @@ Arguments:
   prefix          Prefix to books location on this device.
 ```
 
-Here is an example of usage in my environment:
+Here is an example of usage in my environment.
+
+I store books in ~/Documents on my desktop system. The same directory (including all files with the same paths) is located in MicroSD card on my PocketBook device.
+
+The following command fetch the book positions from the E-reader database and updates them in the zathura history file:
 
 ```
 $ pbsync /media/jubnzv/PB740 /home/jubnzv/.local/share/zathura/history /home/jubnzv/
@@ -44,8 +48,6 @@ Check the difference using:
 To apply these changes use:
  mv /home/jubnzv/.local/share/zathura/history{,.new}
 ```
-
-I store books in `~/Documents` on my desktop and keep this directory with all files on my PocketBook device.
 
 ## License
 MIT
